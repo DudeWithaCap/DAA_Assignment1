@@ -1,0 +1,72 @@
+public class MergeSort {
+
+    private static final int insertion_sort= 16;
+
+    public static void main(String[] args) {
+        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        mergeSort(arr);
+        printArray(arr);
+    }
+    public static void mergeSort(int[] arr) {
+        int[] buffer = new int[arr.length];
+        mergeSort(arr, buffer, 0, arr.length - 1);
+    }
+
+    private static void mergeSort(int[] arr, int[] buffer, int left, int right) {
+
+        if (right - left <= insertion_sort) {
+            insertionSort(arr, left, right);
+            return;
+        }
+
+        if (left < right) {
+            int mid = (left + right) / 2;
+
+            mergeSort(arr, buffer, left, mid);
+            mergeSort(arr, buffer, mid + 1, right);
+
+            merge(arr, buffer, left, mid, right);
+        }
+        }
+
+    private static void merge(int[] arr, int[] buffer, int left, int mid, int right) {
+        for (int i = left; i <= mid; i++) {
+            buffer[i] = arr[i];
+        }
+
+        int i = left;
+        int j = mid + 1;
+        int k = left;
+
+        while (i <= mid && j <= right) {
+            if (buffer[i] <= arr[j]) {
+                arr[k++] = buffer[i++];
+            } else {
+                arr[k++] = arr[j++];
+            }
+        }
+
+        while (i <= mid) {
+            arr[k++] = buffer[i++];
+        }
+    }
+
+    private static void insertionSort(int[] arr, int left, int right) {
+        for (int i = left + 1; i <= right; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= left && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    private static void printArray(int[] arr) {
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+}
