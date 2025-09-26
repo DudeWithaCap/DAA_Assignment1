@@ -1,7 +1,10 @@
 public class MergeSort {
 
     private static final int insertion_sort= 16;
-
+    private static long comparisons = 0;
+    private static int currentDepth = 0;
+    private static int maxDepth = 0;
+    private static int allocations = 0;
     public static void main(String[] args) {
         int[] arr = {38, 27, 43, 3, 9, 82, 10};
         mergeSort(arr);
