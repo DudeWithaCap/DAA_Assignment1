@@ -54,6 +54,7 @@ public class MergeSort {
         int k = left;
 
         while (i <= mid && j <= right) {
+            comparisons++;
             if (buffer[i] <= arr[j]) {
                 arr[k++] = buffer[i++];
             } else {
