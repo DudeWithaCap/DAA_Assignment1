@@ -7,6 +7,9 @@ public class MergeSort {
     private static int allocations = 0;
     public static void main(String[] args) {
         int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        System.out.println("Unsorted array");
+        printArray(arr);
+        long startTime = System.nanoTime();
         mergeSort(arr);
         printArray(arr);
     }
