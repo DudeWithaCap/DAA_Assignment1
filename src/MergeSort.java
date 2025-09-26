@@ -20,8 +20,9 @@ public class MergeSort {
         printArray(arr);
     }
     public static void mergeSort(int[] arr) {
+        allocations++;
         int[] buffer = new int[arr.length];
-        mergeSort(arr, buffer, 0, arr.length - 1);
+        mergeSort(arr, buffer, 0, arr.length - 1, 1);
     }
 
     private static void mergeSort(int[] arr, int[] buffer, int left, int right) {
