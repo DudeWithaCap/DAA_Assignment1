@@ -11,6 +11,12 @@ public class MergeSort {
         printArray(arr);
         long startTime = System.nanoTime();
         mergeSort(arr);
+        long endTime = System.nanoTime();
+        System.out.println("Execution time (ns): " + (endTime - startTime));
+        System.out.println("Comparisons: " + comparisons);
+        System.out.println("Maximum recursion depth: " + maxDepth);
+        System.out.println("Array allocations: " + allocations);
+        System.out.println("Sorted array");
         printArray(arr);
     }
     public static void mergeSort(int[] arr) {
