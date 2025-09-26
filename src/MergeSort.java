@@ -37,8 +37,8 @@ public class MergeSort {
         if (left < right) {
             int mid = (left + right) / 2;
 
-            mergeSort(arr, buffer, left, mid);
-            mergeSort(arr, buffer, mid + 1, right);
+            mergeSort(arr, buffer, left, mid, depth + 1);
+            mergeSort(arr, buffer, mid + 1, right, depth + 1);
 
             merge(arr, buffer, left, mid, right);
         }
