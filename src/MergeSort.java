@@ -25,7 +25,9 @@ public class MergeSort {
         mergeSort(arr, buffer, 0, arr.length - 1, 1);
     }
 
-    private static void mergeSort(int[] arr, int[] buffer, int left, int right) {
+    private static void mergeSort(int[] arr, int[] buffer, int left, int right, int depth) {
+        currentDepth = depth;
+        maxDepth = Math.max(maxDepth, depth);
 
         if (right - left <= insertion_sort) {
             insertionSort(arr, left, right);
