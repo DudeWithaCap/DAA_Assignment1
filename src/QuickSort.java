@@ -62,18 +62,16 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {10, 7, 8, 9, 1, 5, 3, 12, 6};
 
-        // Print original array
         System.out.println("Original array:");
         for (int num : arr) {
             System.out.print(num + " ");
         }
         System.out.println();
 
-        long startTime = System.nanoTime(); // [ADDED]
+        long startTime = System.nanoTime();
         quickSort(arr);
-        long endTime = System.nanoTime();   // [ADDED]
+        long endTime = System.nanoTime();
 
-        // Print sorted array
         System.out.println("Sorted array:");
         for (int num : arr) {
             System.out.print(num + " ");
