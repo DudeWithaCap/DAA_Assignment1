@@ -19,3 +19,6 @@ Randomized pivot can greatly affect the algorithms metrics, every time providing
 MergeSort showed good metrics due to linear merge and reusable buffer.
 Deterministic Selects' grouping into 5s method solves k-th smallest element job great, despite drawbacks in metrics.
 Closest Pair of Points showed good comparison rate.
+
+<img width="819" height="534" alt="image" src="https://github.com/user-attachments/assets/eecfefeb-f5f7-40d9-9b7c-c18a0a45c5d0" />
+Table with metrics
